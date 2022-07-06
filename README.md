@@ -11,7 +11,7 @@
 
 ![setting-search-path.png](setting-search-path.png)
 
-如果我们用命令行的话，直接使用 **`-I`** 命令行编译选项即可。
+如果我们用命令行的话，直接使用 **`-Imylib`** 命令行编译选项即可。
 
 <br />
 
