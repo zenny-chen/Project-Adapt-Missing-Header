@@ -1,0 +1,25 @@
+#ifndef MY_LIB_ATOMIC
+#define MY_LIB_ATMOIC      1
+
+// 通过搜索当前环境指定的下一个搜索路径来先判定
+// 当前是否含有系统自带的<atomic>
+#if __has_include_next(<atomic>)
+// 如果存在，则包含该系统自带的<atomic>
+#include_next <atomic>
+
+#else
+
+#define MY_LIB_ATMOIC_IMPL  1
+
+namespace std
+{
+    typedef int     atomic_int;
+    inline int atomic_load(volatile atomic_int *pAtom)
+    {
+        return *pAtom;
+    }
+}
+
+#endif  // #if __has_include_next(<atomic>)
+
+#endif  // MY_LIB_ATMOIC
