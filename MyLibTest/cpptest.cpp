@@ -5,7 +5,7 @@
 #error "MY_LIB_ATMOIC is not included!!"
 #endif
 
-extern "C" void CPPTest()
+extern "C" void CPPTest(void)
 {
 #if MY_LIB_ATMOIC_IMPL
     puts("self-implemented <atomic> is used!");
